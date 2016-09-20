@@ -46,11 +46,11 @@ public class Car {
     }
 
     public double calculateBorrowedAmount() {
-        return 0.0;
+        return (mPrice * TAX_RATE) + mPrice;
     }
 
     public double calculateInterestAmount(){
-        return 0.0;
+        return calculateBorrowedAmount();
     }
 
     public double calculateMonthlyPayment(){
@@ -60,11 +60,11 @@ public class Car {
     }
 
     public double calculateTaxAmount(){
-        return 0.0;
+        return (mPrice * TAX_RATE) - mPrice;
     }
 
     public double calculateTotalCost(){
-        return 0.0;
+        return mPrice + calculateTaxAmount();
     }
 
     public double getInterestRate(){

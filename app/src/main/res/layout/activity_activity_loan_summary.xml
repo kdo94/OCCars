@@ -50,5 +50,7 @@
         android:text="@string/go_data_entry"
         android:id="@+id/returnButton"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="returnToDataEntry"
+        android:nestedScrollingEnabled="false" />
 </RelativeLayout>

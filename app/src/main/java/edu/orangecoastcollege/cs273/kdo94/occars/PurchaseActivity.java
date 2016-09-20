@@ -69,7 +69,6 @@ public class PurchaseActivity extends AppCompatActivity {
 
         // Start the new activity
         startActivity(loanSummaryIntent);
-
     }
 
     private void constructLoanSummaryText(){
