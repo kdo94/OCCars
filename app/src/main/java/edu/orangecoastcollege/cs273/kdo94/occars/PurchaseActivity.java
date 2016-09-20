@@ -1,6 +1,7 @@
 package edu.orangecoastcollege.cs273.kdo94.occars;
 
 import android.content.Intent;
+import android.icu.text.DecimalFormat;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.RadioButton;
 
 public class PurchaseActivity extends AppCompatActivity {
 
+    DecimalFormat precise = new DecimalFormat("0.00");
     private EditText carPriceEditText;
     private EditText downPaymentEditText;
     private RadioButton threeYearsRadioButton;
@@ -53,6 +55,8 @@ public class PurchaseActivity extends AppCompatActivity {
             loanTerm = 5;
         else if(fourYearsRadioButton.isChecked())
             loanTerm = 4;
+        else if(threeYearsRadioButton.isChecked())
+            loanTerm = 3;
         else
             loanTerm = 3;
 
@@ -72,15 +76,15 @@ public class PurchaseActivity extends AppCompatActivity {
     }
 
     private void constructLoanSummaryText(){
-        monthlyPaymentText = getString(R.string.report_line1) + currentCar.calculateMonthlyPayment();
+        monthlyPaymentText = getString(R.string.report_line1) + precise.format(currentCar.calculateMonthlyPayment());
 
-        loanSummaryText = getString(R.string.report_line2) + currentCar.getPrice() +
-                            getString(R.string.report_line3) + currentCar.getDownPayment() +
-                            getString(R.string.report_line5) + currentCar.calculateTaxAmount() +
-                            getString(R.string.report_line6) + currentCar.calculateTotalCost() +
-                            getString(R.string.report_line7) + currentCar.calculateBorrowedAmount() +
-                            getString(R.string.report_line8) + currentCar.calculateInterestAmount() +
-                            getString(R.string.report_line4) + currentCar.getLoanTerm() +
+        loanSummaryText = getString(R.string.report_line2) +  String.format("%22s", precise.format(currentCar.getPrice())) +
+                            getString(R.string.report_line3) + String.format("%20s", precise.format(currentCar.getDownPayment())) +
+                            getString(R.string.report_line5) + String.format("%34s", precise.format(currentCar.calculateTaxAmount())) +
+                            getString(R.string.report_line6) + String.format("%35s", precise.format(currentCar.calculateTotalCost())) +
+                            getString(R.string.report_line7) + String.format("%19s", precise.format(currentCar.calculateBorrowedAmount())) +
+                            getString(R.string.report_line8) + String.format("%24s", precise.format(currentCar.calculateInterestAmount())) +
+                            getString(R.string.report_line4) + " " + currentCar.getLoanTerm() + " years." +
                             getString(R.string.report_line9) + getString(R.string.report_line10) +
                             getString(R.string.report_line11) + getString(R.string.report_line12);
     }

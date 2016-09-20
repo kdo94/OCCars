@@ -18,20 +18,23 @@
         android:src="@drawable/oc_cars_logo" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/loan_summary"
         android:id="@+id/textView7"
         android:layout_below="@+id/imageView2"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="#515169"
+        android:gravity="center"
+        android:textColor="#ffffff" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Small Text"
-        android:id="@+id/monthylPaymentTextView"
+        android:id="@+id/monthlyPaymentTextView"
         android:layout_below="@+id/textView7"
         android:layout_centerHorizontal="true" />
 
@@ -41,8 +44,9 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Small Text"
         android:id="@+id/loanReportTextView"
-        android:layout_below="@+id/monthylPaymentTextView"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/monthlyPaymentTextView"
+        android:layout_centerHorizontal="true"
+        android:gravity="fill" />
 
     <Button
         android:layout_width="wrap_content"

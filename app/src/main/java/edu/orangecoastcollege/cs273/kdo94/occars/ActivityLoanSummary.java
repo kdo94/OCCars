@@ -20,10 +20,13 @@ public class ActivityLoanSummary extends Activity {
         returnButton = (Button) findViewById(R.id.returnButton);
 
         Bundle intentBundle = getIntent().getExtras();
-        loanReportTextView = (TextView) findViewById(R.id.loanReportButton);
-        monthlyPaymentTextView = (TextView) findViewById(R.id.monthylPaymentTextView);
-        intentBundle.getString("LoanSummary");
-        intentBundle.getString("MonthlyPayment");
+        loanReportTextView = (TextView) findViewById(R.id.loanReportTextView);
+        monthlyPaymentTextView = (TextView) findViewById(R.id.monthlyPaymentTextView);
+
+
+        loanReportTextView.setText(intentBundle.getString("LoanSummary"));
+        monthlyPaymentTextView.setText(intentBundle.getString("MonthlyPayment"));
+
     }
 
     public void returnToDataEntry(View view){

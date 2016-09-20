@@ -3,6 +3,9 @@ package edu.orangecoastcollege.cs273.kdo94.occars;
 /**
  * Created by kdo94 on 9/15/2016.
  */
+
+
+
 public class Car {
     private double mDownPayment;
     private int mLoanTerm;
@@ -46,21 +49,21 @@ public class Car {
     }
 
     public double calculateBorrowedAmount() {
-        return (mPrice * TAX_RATE) + mPrice;
+        return (mPrice * TAX_RATE) + mPrice - mDownPayment;
     }
 
     public double calculateInterestAmount(){
-        return calculateBorrowedAmount();
+        double rate = getInterestRate();
+        int period = getLoanTerm() * 12;
+        return (mPrice - mDownPayment) * (rate * Math.pow((1 + rate), period)) / (Math.pow((1 + rate), period) - 1);
     }
 
     public double calculateMonthlyPayment(){
-        double monthly = mPrice * (getInterestRate() *
-                Math.pow((1 + getInterestRate()), mLoanTerm * 12));
-        return monthly;
+        return (calculateBorrowedAmount() + calculateInterestAmount()) / (getLoanTerm() * 12);
     }
 
     public double calculateTaxAmount(){
-        return (mPrice * TAX_RATE) - mPrice;
+        return mPrice * TAX_RATE;
     }
 
     public double calculateTotalCost(){
