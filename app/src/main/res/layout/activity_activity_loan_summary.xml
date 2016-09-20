@@ -36,7 +36,9 @@
         android:text="Small Text"
         android:id="@+id/monthlyPaymentTextView"
         android:layout_below="@+id/textView7"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -46,7 +48,9 @@
         android:id="@+id/loanReportTextView"
         android:layout_below="@+id/monthlyPaymentTextView"
         android:layout_centerHorizontal="true"
-        android:gravity="fill" />
+        android:gravity="fill"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
