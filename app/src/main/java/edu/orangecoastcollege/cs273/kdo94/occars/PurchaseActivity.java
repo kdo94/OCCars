@@ -65,7 +65,7 @@ public class PurchaseActivity extends AppCompatActivity {
         // Create the Intent to share data with LoanSummaryActivity
         Intent loanSummaryIntent = new Intent(this, ActivityLoanSummary.class);
         loanSummaryIntent.putExtra("MonthlyPayment", monthlyPaymentText);
-        loanSummaryIntent.putExtra("Monthly Payment", loanSummaryText);
+        loanSummaryIntent.putExtra("LoanSummary", loanSummaryText);
 
         // Start the new activity
         startActivity(loanSummaryIntent);
